@@ -10,7 +10,7 @@ package run;
 	 * A binary minheap of DijkstraNode objects.
 	 * 
 	 * @author Donald Chinn
-	 * @author updated by: Michael Pitts
+	 * updated by: Michael Pitts
 	 * @version updated November 28, 2011
 	 * @version Original September 19, 2003
 	 */
@@ -121,14 +121,14 @@ public class Heap {
     	while (index > 1) {
             if (temp.compareTo(elements[index/2]) < 0) {
                 elements[index] = elements[index/2];
-                elements[index].setLocation(index);
+                elements[index].setLocation(index); // added by Michael Pitts
                 index = index / 2;
             } else {
                 break;
             }
         }
         elements[index] = temp;
-        elements[index].setLocation(index);
+        elements[index].setLocation(index); // added by Michael Pitts
     }
     
     
@@ -150,14 +150,14 @@ public class Heap {
             // the two children
             if (elements[child].compareTo(temp) < 0) {
                 elements[index] = elements[child];
-                elements[index].setLocation(index);
+                elements[index].setLocation(index); // added by Michael Pitts
                 index = child;
             } else {
                 break;
             }
         }
         elements[index] = temp;
-        elements[index].setLocation(index);
+        elements[index].setLocation(index); // added by Michael Pitts
     }
     
     /**
