@@ -167,7 +167,7 @@ public class Heap {
      * @param the_node is the node that had its cost lowered.
      */
     public void rePercolate(final DijkstraNode the_node) {
-    	if (size > 0) {
+    	if (size > 1) {
 	    	elements[the_node.getLocation()] = elements[size];
 	    	elements[the_node.getLocation()].setLocation(the_node.getLocation());
 	    	elements[size] = the_node;
