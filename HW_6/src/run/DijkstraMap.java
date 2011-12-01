@@ -82,7 +82,7 @@ public class DijkstraMap {
 		final Iterator<Edge> iterator = the_graph.incidentEdges(the_node.getVertex());
 		Edge edge;
 		Vertex vertex;
-		int cost;
+		Integer cost;
 		while (iterator.hasNext()) { // go over every adjacent vertex to this one
 			edge = iterator.next();
 			vertex = the_graph.opposite(the_node.getVertex(), edge);
