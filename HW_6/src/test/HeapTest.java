@@ -120,10 +120,14 @@ public class HeapTest {
 		} // 3, 1, 4, 0
 		my_nodes[2].setCost(0);
 		my_heap.rePercolate(my_nodes[2]);
-		assertEquals("Zero should still be at top" , 1, my_nodes[3].getLocation());
-		assertEquals("\"Four\" should be next" , 2, my_nodes[2].getLocation());
-		assertEquals("Three at the bottom" , 3, my_nodes[0].getLocation());
-		assertEquals("One should be after" , 4, my_nodes[1].getLocation());
+		assertTrue("Should still have node Zero on top", 
+				my_heap.deleteMin().equals(my_nodes[3]));
+		assertTrue("Next should be \"Four\"",
+				my_heap.deleteMin().equals(my_nodes[2]));
+		assertTrue("After should be One",
+				my_heap.deleteMin().equals(my_nodes[1]));
+		assertTrue("Finally Three should be last",
+				my_heap.deleteMin().equals(my_nodes[0]));
 	}
 	
 	/**
@@ -132,11 +136,17 @@ public class HeapTest {
 	@Test public void testRePercolateGoingDown() {
 		for (DijkstraNode insert : my_nodes) {
 			my_heap.insert(insert);
-		}
+		} // 3, 1, 4, 0
 		my_nodes[1].setCost(5);
 		my_heap.rePercolate(my_nodes[1]);
-		assertEquals("Node \"Zero\" should be at bottom", 
-				4, my_nodes[1].getLocation());
+		assertTrue("Zero should still be on the top",
+				my_heap.deleteMin().equals(my_nodes[3]));
+		assertTrue("Three should be next", 
+				my_heap.deleteMin().equals(my_nodes[0]));
+		assertTrue("Four should be next",
+				my_heap.deleteMin().equals(my_nodes[2]));
+		assertTrue("\"One\" should be last",
+				my_heap.deleteMin().equals(my_nodes[1]));
 	}
 
 }
