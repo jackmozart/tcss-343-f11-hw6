@@ -82,14 +82,14 @@ public class DijkstraMap {
 		final Iterator<Edge> iterator = the_graph.incidentEdges(the_node.getVertex());
 		Edge edge;
 		Vertex vertex;
-		Integer cost;
+		Double cost;
 		while (iterator.hasNext()) { // go over every adjacent vertex to this one
 			edge = iterator.next();
 			vertex = the_graph.opposite(the_node.getVertex(), edge);
 			if (!my_visited.contains(vertex)) { // only check unvisited
-				cost = the_node.getCost() + ((Integer) edge.getData()).intValue();
+				cost = the_node.getCost() + ((Double) edge.getData()).doubleValue();
 				if (cost < my_map.get(vertex).getCost()) { // if found better path
-					my_map.get(vertex).setCost(cost);
+					my_map.get(vertex).setCost(cost.doubleValue());
 					my_map.get(vertex).setPrevious(the_node);
 					if (my_map.get(vertex).getLocation() == 0) {
 						my_heap.insert(my_map.get(vertex)); // not yet in heap, insert

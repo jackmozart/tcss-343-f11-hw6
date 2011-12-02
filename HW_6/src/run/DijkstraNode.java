@@ -22,7 +22,7 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 	private DijkstraNode my_previous;
 
 	/** The cost of the path up to this Node and Vertex. */
-	private int my_cost;
+	private double my_cost;
 
 	/** The location of the Node in the heap. */
 	private int my_location;
@@ -37,7 +37,7 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 	 * @param the_previous
 	 *            is the previous Node in the path leading to this Node.
 	 */
-	public DijkstraNode(final Vertex the_vertex, final int the_cost,
+	public DijkstraNode(final Vertex the_vertex, final double the_cost,
 			final DijkstraNode the_previous) {
 		my_cost = the_cost;
 		my_vertex = the_vertex;
@@ -56,7 +56,7 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 	}
 
 	/** @return the cost to get to this Node. */
-	public int getCost() {
+	public double getCost() {
 		return my_cost;
 	}
 
@@ -76,7 +76,7 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 	 * @param the_cost
 	 *            is the new cost.
 	 */
-	public void setCost(final int the_cost) {
+	public void setCost(final double the_cost) {
 		my_cost = the_cost;
 	}
 
@@ -102,7 +102,12 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 	/** {@inheritDoc} */
 	@Override
 	public int compareTo(final DijkstraNode the_other) {
-		return my_cost - the_other.my_cost;
+		if (my_cost - the_other.my_cost > 0.0) {
+			return 1;
+		} else if (my_cost - the_other.my_cost < 0.0) {
+			return -1;
+		}
+		return 0;
 	}
 
 	/**

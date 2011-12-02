@@ -78,9 +78,9 @@ public class DijkstraNodeTest {
 	 * Test method for {@link DijkstraNode#setCost(int)}.
 	 */
 	@Test public void testSetCost() {
-		assertEquals("Did not get correct original cost", 5, my_node.getCost());
+		assertEquals("Did not get correct original cost", 5.0, my_node.getCost(), 0.0);
 		my_node.setCost(7);
-		assertEquals("Did not get correct new cost", 7, my_node.getCost());
+		assertEquals("Did not get correct new cost", 7.0, my_node.getCost(), 0.0);
 	}
 
 	/**
@@ -98,11 +98,9 @@ public class DijkstraNodeTest {
 	 */
 	@Test public void testCompareTo() {
 		assertEquals("Did not get correct compare", 
-				my_node.getCost() - my_previous_node.getCost(), 
-				my_node.compareTo(my_previous_node));
+				1, my_node.compareTo(my_previous_node), 0.0);
 		assertEquals("Did not get correct reverse compare",
-				my_previous_node.getCost() - my_node.getCost(),
-				my_previous_node.compareTo(my_node));
+				-1, my_previous_node.compareTo(my_node), 0.0);
 		final DijkstraNode node = new DijkstraNode(my_vertex, 5, my_previous_node);
 		assertEquals("Should be equal", 0, my_node.compareTo(node));
 		assertEquals("Should still be equal", 0, node.compareTo(my_node));
