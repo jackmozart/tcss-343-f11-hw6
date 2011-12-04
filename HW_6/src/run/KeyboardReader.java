@@ -200,7 +200,7 @@ public class KeyboardReader {
          else 
             System.out.println (d + " entered");
       }
-
+      
       // String input
       while (true) {
          System.out.println ("Enter a String");
