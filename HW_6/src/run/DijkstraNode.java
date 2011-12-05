@@ -102,6 +102,9 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 	/** {@inheritDoc} */
 	@Override
 	public int compareTo(final DijkstraNode the_other) {
+		if(the_other == null){
+			throw  new IllegalArgumentException("Null argument in Dikstra Node comapare to");
+		}
 		if (my_cost - the_other.my_cost > 0.0) {
 			return 1;
 		} else if (my_cost - the_other.my_cost < 0.0) {

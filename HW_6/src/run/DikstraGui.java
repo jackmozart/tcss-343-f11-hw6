@@ -171,19 +171,22 @@ public class DikstraGui extends JFrame {
 	    
 	    // Make rest of tools.
 	  }
-	  
-	  /**
-	   * Creates an action for a Tool.
-	   * 
-	   * @param the_tool An instance of Tool.
-	   * @param the_name The name of the tool.
-	   * @param the_key The mnemonic key.
-	   * @param the_description A short description of the tool.
-	   * @return the action.
-	   */
-	  private Action createTool( final String the_name,
-	                         final int the_key, 
-	                         final String the_description)
+
+	/**
+	 * Creates an action for a Tool.
+	 * 
+	 * @param the_tool
+	 *            An instance of Tool.
+	 * @param the_name
+	 *            The name of the tool.
+	 * @param the_key
+	 *            The mnemonic key.
+	 * @param the_description
+	 *            A short description of the tool.
+	 * @return the action.
+	 */
+	private Action createTool(final String the_name, final int the_key,
+			final String the_description)
 	  {
 	    final Action a = new AbstractAction(the_name)
 	    {
