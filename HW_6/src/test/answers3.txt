@@ -1,18 +1,18 @@
-A : 0 : [A]
-B : 4 : [B <- A]
-C : 8 : [C <- B <- A]
-D : 9 : [D <- E <- A]
-E : 7 : [E <- A]
-F : 13 : [F <- E <- A]
-G : 12 : [G <- D <- E <- A]
-H : 13 : [H <- G <- D <- E <- A]
-I : 9 : [I <- J <- K <- B <- A]
-J : 8 : [J <- K <- B <- A]
-K : 7 : [K <- B <- A]
-L : 10 : [L <- K <- B <- A]
-M : 12 : [M <- L <- K <- B <- A]
-N : 13 : [N <- M <- L <- K <- B <- A]
-O : 17 : [O <- N <- M <- L <- K <- B <- A]
-P : 15 : [P <- M <- L <- K <- B <- A]
-Q : 22 : [Q <- P <- M <- L <- K <- B <- A]
-R : 17 : [R <- M <- L <- K <- B <- A]
+A 0
+B 4 A
+E 7 A
+K 7 B
+C 8 B
+J 8 K
+D 9 E
+I 9 J
+L 10 K
+G 12 D
+M 12 L
+F 13 E
+H 13 G
+N 13 M
+P 15 M
+O 17 N
+R 17 M
+Q 22 P

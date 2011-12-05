@@ -168,7 +168,8 @@ public class Heap {
      */
     public void rePercolate(final DijkstraNode the_node) {
     	if (size > 1) {
-    		if (the_node.compareTo(elements[the_node.getLocation()/2]) > 0) {
+    		if (the_node.getLocation() > 1 && 
+    				the_node.compareTo(elements[the_node.getLocation()/2]) > 0) {
     			percolateUp(the_node.getLocation());
     		} else {
     			percolateDown(the_node.getLocation());

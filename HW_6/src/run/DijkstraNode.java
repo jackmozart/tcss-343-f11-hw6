@@ -51,8 +51,8 @@ public class DijkstraNode implements Comparable<DijkstraNode> {
 
 	/** {@inheritDoc} */
 	public boolean equals(final Object the_other) {
-		return DijkstraNode.class.isInstance(the_other)
-				&& ((DijkstraNode) the_other).my_vertex.equals(my_vertex);
+		return DijkstraNode.class.isInstance(the_other) &&
+				((DijkstraNode) the_other).my_vertex.getName().equals(my_vertex.getName());
 	}
 
 	/** @return the cost to get to this Node. */
